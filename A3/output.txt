@@ -1,0 +1,132 @@
+String file loaded. Lines read: 7
+Invalid line -- wrong type or field count: b.For Whom the Bell Tolls,Ernest Hemingway,155,ONSHELF
+Invalid line -- wrong type or field count: b.Undaunted Courage,Stephen Ambrose,498,ONSHELF
+Invalid line -- wrong type or field count: b.D Day,Stephen Ambrose,-498,ONSHELF
+Invalid line -- wrong type or field count: b.A Christmas Carol,Charles Dickens,198,MISSING
+Invalid line -- wrong type or field count: b.Operations Research,Brian Bennington,326,ONSHELF
+Invalid line -- wrong type or field count: d,Oliver Twist,Charles Dickens,231,ONSHELF
+BookException on line [b,,Charles Dickens,931,ONSHELF]: Title is null or empty.
+Invalid line -- wrong type or field count: b.Java,,987,MISSING
+JournalException on line [j,IEEE Proceedings,IEEE,-21,ONSHELF]: Volume must be at least 1.
+JournalException on line [j,IEEE Proceedings,,21,ONSHELF]: Editor is null or empty.
+Library items loaded. Items added: 7
+
+************ STRING LIST DEMONSTRATIONS ************
+ a. isEmpty 
+stringList.isEmpty(): false
+ c. size 
+stringList.size(): 7
+ b. remove(index 0) 
+Removed: Monmouth University
+List after remove:
+  West Long Branch
+  February
+  Cloud Computing
+  Data Structures
+  MacBook
+  Spacex
+ d. add 
+Added: "Java Programming"
+List after add:
+  West Long Branch
+  February
+  Cloud Computing
+  Data Structures
+  MacBook
+  Spacex
+  Java Programming
+ e. iterator 
+  West Long Branch
+  February
+  Cloud Computing
+  Data Structures
+  MacBook
+  Spacex
+  Java Programming
+f. listIterator forward 
+  West Long Branch
+  February
+  Cloud Computing
+  Data Structures
+  MacBook
+  Spacex
+  Java Programming
+f. listIterator reverse 
+  Java Programming
+  Spacex
+  MacBook
+  Data Structures
+  Cloud Computing
+  February
+  West Long Branch
+
+************ LIBRARY ITEM LIST DEMONSTRATIONS ************
+a. isEmpty 
+libraryList.isEmpty(): false
+c. size 
+libraryList.size(): 7
+ b. remove(index 0) 
+Removed: Book [title=To Kill a Mockingbird, author=Harper Lee, pages=320, status=ONSHELF]
+List after remove:
+  Journal [title=Science, editor=American Association for the Advancement of Science, volume=1, status=ONSHELF]
+  Journal [title=Proceedings of the National Academy of Sciences, editor=National Academy of Sciences, volume=2, status=ONSHELF]
+  Journal [title=Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21, status=ONSHELF]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=451, status=BORROWED]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=78, status=ONSHELF]
+  Journal [title=IEEE Proceedings, editor=IEEE, volume=21, status=ONSHELF]
+ d. add 
+Added: Book [title=The Pragmatic Programmer, author=Andrew Hunt, pages=352, status=ONSHELF]
+List after add:
+  Journal [title=Science, editor=American Association for the Advancement of Science, volume=1, status=ONSHELF]
+  Journal [title=Proceedings of the National Academy of Sciences, editor=National Academy of Sciences, volume=2, status=ONSHELF]
+  Journal [title=Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21, status=ONSHELF]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=451, status=BORROWED]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=78, status=ONSHELF]
+  Journal [title=IEEE Proceedings, editor=IEEE, volume=21, status=ONSHELF]
+  Book [title=The Pragmatic Programmer, author=Andrew Hunt, pages=352, status=ONSHELF]
+ e. iterator 
+  Journal [title=Science, editor=American Association for the Advancement of Science, volume=1, status=ONSHELF]
+  Journal [title=Proceedings of the National Academy of Sciences, editor=National Academy of Sciences, volume=2, status=ONSHELF]
+  Journal [title=Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21, status=ONSHELF]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=451, status=BORROWED]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=78, status=ONSHELF]
+  Journal [title=IEEE Proceedings, editor=IEEE, volume=21, status=ONSHELF]
+  Book [title=The Pragmatic Programmer, author=Andrew Hunt, pages=352, status=ONSHELF]
+f. listIterator forward
+  Journal [title=Science, editor=American Association for the Advancement of Science, volume=1, status=ONSHELF]
+  Journal [title=Proceedings of the National Academy of Sciences, editor=National Academy of Sciences, volume=2, status=ONSHELF]
+  Journal [title=Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21, status=ONSHELF]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=451, status=BORROWED]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=78, status=ONSHELF]
+  Journal [title=IEEE Proceedings, editor=IEEE, volume=21, status=ONSHELF]
+  Book [title=The Pragmatic Programmer, author=Andrew Hunt, pages=352, status=ONSHELF]
+ f. listIterator reverse 
+  Book [title=The Pragmatic Programmer, author=Andrew Hunt, pages=352, status=ONSHELF]
+  Journal [title=IEEE Proceedings, editor=IEEE, volume=21, status=ONSHELF]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=78, status=ONSHELF]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=451, status=BORROWED]
+  Journal [title=Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21, status=ONSHELF]
+  Journal [title=Proceedings of the National Academy of Sciences, editor=National Academy of Sciences, volume=2, status=ONSHELF]
+  Journal [title=Science, editor=American Association for the Advancement of Science, volume=1, status=ONSHELF]
+ g. contains (Book IN list: 'The Pragmatic Programmer' by Andrew Hunt)
+contains result: true
+ g. contains (Book NOT in list: 'The Great Gatsby' by F. Scott Fitzgerald) 
+contains result: false
+ h. remove(Journal IN list: 'Science', vol 1) 
+remove result: true
+List after remove:
+  Journal [title=Proceedings of the National Academy of Sciences, editor=National Academy of Sciences, volume=2, status=ONSHELF]
+  Journal [title=Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21, status=ONSHELF]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=451, status=BORROWED]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=78, status=ONSHELF]
+  Journal [title=IEEE Proceedings, editor=IEEE, volume=21, status=ONSHELF]
+  Book [title=The Pragmatic Programmer, author=Andrew Hunt, pages=352, status=ONSHELF]
+ h. remove(Journal NOT in list: 'Nature', vol 1) 
+remove result: false
+List after remove:
+  Journal [title=Proceedings of the National Academy of Sciences, editor=National Academy of Sciences, volume=2, status=ONSHELF]
+  Journal [title=Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21, status=ONSHELF]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=451, status=BORROWED]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=78, status=ONSHELF]
+  Journal [title=IEEE Proceedings, editor=IEEE, volume=21, status=ONSHELF]
+  Book [title=The Pragmatic Programmer, author=Andrew Hunt, pages=352, status=ONSHELF]

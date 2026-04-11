@@ -1,0 +1,18 @@
+b,To Kill a Mockingbird,Harper Lee,320,ONSHELF
+b.For Whom the Bell Tolls,Ernest Hemingway,155,ONSHELF
+b.Undaunted Courage,Stephen Ambrose,498,ONSHELF
+b.D Day,Stephen Ambrose,-498,ONSHELF
+b.A Christmas Carol,Charles Dickens,198,MISSING
+b.Operations Research,Brian Bennington,326,ONSHELF
+d,Oliver Twist,Charles Dickens,231,ONSHELF
+b,,Charles Dickens,931,ONSHELF
+b.Java,,987,MISSING
+j,Science,American Association for the Advancement of Science,1,ONSHELF
+
+j,Proceedings of the National Academy of Sciences,National Academy of Sciences,2,ONSHELF
+j,Foundations and Trends in Microcomputing,NowPublishers,21,ONSHELF
+j,IEEE Proceedings,IEEE,-21,ONSHELF
+j,ACM Transations on Graphics,ACM,451,BORROWED
+j,ACM Transations on Graphics,ACM,78,ONSHELF
+j,IEEE Proceedings,,21,ONSHELF
+j,IEEE Proceedings,IEEE,21,ONSHELF
