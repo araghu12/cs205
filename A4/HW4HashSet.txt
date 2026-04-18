@@ -1,0 +1,136 @@
+
+*********** VERIFYING equals() AND hashCode() CONSISTENCY ***********
+
+-- Equivalent Books (same author + title, different pages/status) --
+b1: Book [title=Clean Code, author=Robert Martin, pages=464, status=ONSHELF]
+b2: Book [title=Clean Code, author=Robert Martin, pages=999, status=MISSING]
+b1.equals(b2): true
+Book.hashCode() used for: Clean Code by Robert Martin
+b1.hashCode(): 1039660460
+Book.hashCode() used for: Clean Code by Robert Martin
+b2.hashCode(): 1039660460
+Book.hashCode() used for: Clean Code by Robert Martin
+Book.hashCode() used for: Clean Code by Robert Martin
+hashCodes match: true
+
+-- Inequivalent Books (different author + title) --
+b3: Book [title=Clean Code, author=Robert Martin, pages=464, status=ONSHELF]
+b4: Book [title=The Pragmatic Programmer, author=Andrew Hunt, pages=352, status=ONSHELF]
+b3.equals(b4): false
+Book.hashCode() used for: Clean Code by Robert Martin
+b3.hashCode(): 1039660460
+Book.hashCode() used for: The Pragmatic Programmer by Andrew Hunt
+b4.hashCode(): -464329554
+Book.hashCode() used for: Clean Code by Robert Martin
+Book.hashCode() used for: The Pragmatic Programmer by Andrew Hunt
+hashCodes differ: true
+
+-- Equivalent Journals (same title + editor + volume, different status) --
+j1: Journal [title=Science, editor=AAAS, volume=1, status=ONSHELF]
+j2: Journal [title=Science, editor=AAAS, volume=1, status=BORROWED]
+j1.equals(j2): true
+Journal.hashCode() invoked for: Science, editor=AAAS, volume=1
+j1.hashCode(): -1493457006
+Journal.hashCode() invoked for: Science, editor=AAAS, volume=1
+j2.hashCode(): -1493457006
+Journal.hashCode() invoked for: Science, editor=AAAS, volume=1
+Journal.hashCode() invoked for: Science, editor=AAAS, volume=1
+hashCodes match: true
+
+-- Inequivalent Journals (different title + editor + volume) --
+j3: Journal [title=Science, editor=AAAS, volume=1, status=ONSHELF]
+j4: Journal [title=Nature, editor=Nature Publishing Group, volume=5, status=ONSHELF]
+j3.equals(j4): false
+Journal.hashCode() invoked for: Science, editor=AAAS, volume=1
+j3.hashCode(): -1493457006
+Journal.hashCode() invoked for: Nature, editor=Nature Publishing Group, volume=5
+j4.hashCode(): -2012620288
+Journal.hashCode() invoked for: Science, editor=AAAS, volume=1
+Journal.hashCode() invoked for: Nature, editor=Nature Publishing Group, volume=5
+hashCodes differ: true
+
+*********** LOADING FROM FILE AND ADDING TO HASHSET ***********
+Book.hashCode() used for: To Kill a Mockingbird by Harper Lee
+add(Book [title=To Kill a Mockingbird, author=Harper Lee, pages=320, status=ONSHELF]) returned: true
+Invalid line -- wrong type or field count: [b.For Whom the Bell Tolls,Ernest Hemingway,155,ONSHELF]
+Invalid line -- wrong type or field count: [b.Undaunted Courage,Stephen Ambrose,498,ONSHELF]
+Invalid line -- wrong type or field count: [b.D Day,Stephen Ambrose,-498,ONSHELF]
+Invalid line -- wrong type or field count: [b.A Christmas Carol,Charles Dickens,198,MISSING]
+Invalid line -- wrong type or field count: [b.Operations Research,Brian Bennington,326,ONSHELF]
+Invalid line -- wrong type or field count: [d,Oliver Twist,Charles Dickens,231,ONSHELF]
+BookException on line [b,,Charles Dickens,931,ONSHELF]: Title is null or empty.
+Invalid line -- wrong type or field count: [b.Java,,987,MISSING]
+Invalid line -- wrong type or field count: [b.A Christmas Carol,Charles Dickens,198,MISSING]
+Journal.hashCode() invoked for: Science, editor=American Association for the Advancement of Science, volume=1
+add(Journal [title=Science, editor=American Association for the Advancement of Science, volume=1, status=ONSHELF]) returned: true
+Skipping empty line.
+Journal.hashCode() invoked for: Proceedings of the National Academy of Sciences, editor=National Academy of Sciences, volume=2
+add(Journal [title=Proceedings of the National Academy of Sciences, editor=National Academy of Sciences, volume=2, status=ONSHELF]) returned: true
+Journal.hashCode() invoked for: Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21
+add(Journal [title=Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21, status=ONSHELF]) returned: true
+Invalid line -- wrong type or field count: [o,ACM Transations on Graphics,ACM,78,ONSHELF]
+JournalException on line [j,IEEE Proceedings,IEEE,-21,ONSHELF]: Volume must be at least 1.
+Journal.hashCode() invoked for: ACM Transations on Graphics, editor=ACM, volume=451
+add(Journal [title=ACM Transations on Graphics, editor=ACM, volume=451, status=BORROWED]) returned: true
+Journal.hashCode() invoked for: Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21
+add(Journal [title=Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21, status=ONSHELF]) returned: false
+Journal.hashCode() invoked for: ACM Transations on Graphics, editor=ACM, volume=78
+add(Journal [title=ACM Transations on Graphics, editor=ACM, volume=78, status=ONSHELF]) returned: true
+JournalException on line [j,IEEE Proceedings,,21,ONSHELF]: Editor is null or empty.
+Journal.hashCode() invoked for: IEEE Proceedings, editor=IEEE, volume=21
+add(Journal [title=IEEE Proceedings, editor=IEEE, volume=21, status=ONSHELF]) returned: true
+
+Total items in HashSet after loading: 7
+
+*********** ITERATING WITH iterator() ***********
+  Journal [title=Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21, status=ONSHELF]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=451, status=BORROWED]
+  Journal [title=IEEE Proceedings, editor=IEEE, volume=21, status=ONSHELF]
+  Journal [title=Science, editor=American Association for the Advancement of Science, volume=1, status=ONSHELF]
+  Journal [title=Proceedings of the National Academy of Sciences, editor=National Academy of Sciences, volume=2, status=ONSHELF]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=78, status=ONSHELF]
+  Book [title=To Kill a Mockingbird, author=Harper Lee, pages=320, status=ONSHELF]
+
+*********** Using contains() ***********
+
+contains(Book IN set): Book [title=To Kill a Mockingbird, author=Harper Lee, pages=1, status=ONSHELF]
+Book.hashCode() used for: To Kill a Mockingbird by Harper Lee
+contains() returned: true
+
+contains(Book NOT in set): Book [title=The Great Gatsby, author=F. Scott Fitzgerald, pages=1, status=ONSHELF]
+Book.hashCode() used for: The Great Gatsby by F. Scott Fitzgerald
+contains() returned: false
+
+contains(Journal IN set): Journal [title=Science, editor=American Association for the Advancement of Science, volume=1, status=MISSING]
+Journal.hashCode() invoked for: Science, editor=American Association for the Advancement of Science, volume=1
+contains() returned: true
+
+contains(Journal NOT in set): Journal [title=Nature, editor=Nature Publishing Group, volume=1, status=ONSHELF]
+Journal.hashCode() invoked for: Nature, editor=Nature Publishing Group, volume=1
+contains() returned: false
+
+*********** Using remove() ***********
+
+remove(Book IN set): Book [title=To Kill a Mockingbird, author=Harper Lee, pages=1, status=ONSHELF]
+Book.hashCode() used for: To Kill a Mockingbird by Harper Lee
+remove() returned: true
+
+remove(Book NOT in set): Book [title=The Great Gatsby, author=F. Scott Fitzgerald, pages=1, status=ONSHELF]
+Book.hashCode() used for: The Great Gatsby by F. Scott Fitzgerald
+remove() returned: false
+
+remove(Journal IN set): Journal [title=Science, editor=American Association for the Advancement of Science, volume=1, status=BORROWED]
+Journal.hashCode() invoked for: Science, editor=American Association for the Advancement of Science, volume=1
+remove() returned: true
+
+remove(Journal NOT in set): Journal [title=Nature, editor=Nature Publishing Group, volume=1, status=ONSHELF]
+Journal.hashCode() invoked for: Nature, editor=Nature Publishing Group, volume=1
+remove() returned: false
+
+***********FINAL ITERATION (for-each) AFTER REMOVES ***********
+Items remaining in HashSet: 5
+  Journal [title=Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21, status=ONSHELF]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=451, status=BORROWED]
+  Journal [title=IEEE Proceedings, editor=IEEE, volume=21, status=ONSHELF]
+  Journal [title=Proceedings of the National Academy of Sciences, editor=National Academy of Sciences, volume=2, status=ONSHELF]
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=78, status=ONSHELF]
