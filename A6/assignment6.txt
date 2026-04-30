@@ -1,0 +1,100 @@
+-- listing properties --
+libraryItem_file_name=libraryItemsHW6.txt
+delimiter=,
+log_file_name=assignment6.txt
+
+*********** LOADING DATA FILE: libraryItemsHW6.txt ***********
+Book.compareTo() invoked: [Harper Lee / To Kill a Mockingbird] vs [Harper Lee / To Kill a Mockingbird]
+bookTreeSet.add(Book [title=To Kill a Mockingbird, author=Harper Lee, pages=320, status=ONSHELF]) returned: true
+Book.compareTo() invoked: [Ernest Hemingway / For Whom the Bell Tolls] vs [Harper Lee / To Kill a Mockingbird]
+bookTreeSet.add(Book [title=For Whom the Bell Tolls, author=Ernest Hemingway, pages=155, status=ONSHELF]) returned: true
+Book.compareTo() invoked: [Stephen Ambrose / Undaunted Courage] vs [Harper Lee / To Kill a Mockingbird]
+bookTreeSet.add(Book [title=Undaunted Courage, author=Stephen Ambrose, pages=498, status=ONSHELF]) returned: true
+BookException on line [b,D Day,Stephen Ambrose,-498,ONSHELF]: The book pages must be at least 1.
+Invalid line -- wrong type or field count: [b.A Christmas Carol,Charles Dickens,198,MISSING]
+Invalid line -- wrong type or field count: [b.Operations Research,Brian Bennington,326,ONSHELF]
+Invalid line -- wrong type or field count: [d,Oliver Twist,Charles Dickens,231,ONSHELF]
+BookException on line [b,,Charles Dickens,931,ONSHELF]: Title is null or empty.
+Invalid line -- empty or unrecognized: [,,,,,]
+Invalid line -- wrong type or field count: [b.Java,,987,MISSING]
+Book.compareTo() invoked: [Ernest Hemingway / For Whom the Bell Tolls] vs [Harper Lee / To Kill a Mockingbird]
+Book.compareTo() invoked: [Ernest Hemingway / For Whom the Bell Tolls] vs [Ernest Hemingway / For Whom the Bell Tolls]
+bookTreeSet.add(Book [title=For Whom the Bell Tolls, author=Ernest Hemingway, pages=155, status=ONSHELF]) returned: false
+Journal.compareTo() invoked: [Science vol=1] vs [Science vol=1]
+journalTreeSet.add(Journal [title=Science, editor=American Association for the Advancement of Science, volume=1, status=ONSHELF]) returned: true
+Skipping empty line.
+Journal.compareTo() invoked: [Proceedings of the National Academy of Sciences vol=2] vs [Science vol=1]
+journalTreeSet.add(Journal [title=Proceedings of the National Academy of Sciences, editor=National Academy of Sciences, volume=2, status=ONSHELF]) returned: true
+Journal.compareTo() invoked: [Foundations and Trends in Microcomputing vol=21] vs [Science vol=1]
+Journal.compareTo() invoked: [Foundations and Trends in Microcomputing vol=21] vs [Proceedings of the National Academy of Sciences vol=2]
+journalTreeSet.add(Journal [title=Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21, status=ONSHELF]) returned: true
+JournalException on line [j,IEEE Proceedings,IEEE,-21,ONSHELF]: Volume must be at least 1.
+Journal.compareTo() invoked: [ACM Transations on Graphics vol=451] vs [Proceedings of the National Academy of Sciences vol=2]
+Journal.compareTo() invoked: [ACM Transations on Graphics vol=451] vs [Foundations and Trends in Microcomputing vol=21]
+journalTreeSet.add(Journal [title=ACM Transations on Graphics, editor=ACM, volume=451, status=BORROWED]) returned: true
+Journal.compareTo() invoked: [ACM Transations on Graphics vol=78] vs [Proceedings of the National Academy of Sciences vol=2]
+Journal.compareTo() invoked: [ACM Transations on Graphics vol=78] vs [Foundations and Trends in Microcomputing vol=21]
+Journal.compareTo() invoked: [ACM Transations on Graphics vol=78] vs [ACM Transations on Graphics vol=451]
+journalTreeSet.add(Journal [title=ACM Transations on Graphics, editor=ACM, volume=78, status=ONSHELF]) returned: true
+JournalException on line [j,IEEE Proceedings,,21,ONSHELF]: Editor is null or empty.
+Journal.compareTo() invoked: [IEEE Proceedings vol=21] vs [Proceedings of the National Academy of Sciences vol=2]
+Journal.compareTo() invoked: [IEEE Proceedings vol=21] vs [ACM Transations on Graphics vol=451]
+Journal.compareTo() invoked: [IEEE Proceedings vol=21] vs [Foundations and Trends in Microcomputing vol=21]
+journalTreeSet.add(Journal [title=IEEE Proceedings, editor=IEEE, volume=21, status=ONSHELF]) returned: true
+Journal.compareTo() invoked: [Foundations and Trends in Microcomputing vol=21] vs [Proceedings of the National Academy of Sciences vol=2]
+Journal.compareTo() invoked: [Foundations and Trends in Microcomputing vol=21] vs [ACM Transations on Graphics vol=451]
+Journal.compareTo() invoked: [Foundations and Trends in Microcomputing vol=21] vs [Foundations and Trends in Microcomputing vol=21]
+journalTreeSet.add(Journal [title=Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21, status=ONSHELF]) returned: false
+
+Books put into natural-order TreeSet: 3
+Journals put into natural-order TreeSet: 6
+
+*********** BOOK TREESET -- NATURAL ORDER (author, then title) ***********
+  Book [title=For Whom the Bell Tolls, author=Ernest Hemingway, pages=155, status=ONSHELF]
+  Book [title=To Kill a Mockingbird, author=Harper Lee, pages=320, status=ONSHELF]
+  Book [title=Undaunted Courage, author=Stephen Ambrose, pages=498, status=ONSHELF]
+
+*********** BOOK TREESET -- ORDERED BY TITLE (BookTitle Comparator) ***********
+BookTitle.compare() invoked: [To Kill a Mockingbird] vs [To Kill a Mockingbird]
+treeTitle.add(Book [title=To Kill a Mockingbird, author=Harper Lee, pages=320, status=ONSHELF]) returned: true
+BookTitle.compare() invoked: [For Whom the Bell Tolls] vs [To Kill a Mockingbird]
+treeTitle.add(Book [title=For Whom the Bell Tolls, author=Ernest Hemingway, pages=155, status=ONSHELF]) returned: true
+BookTitle.compare() invoked: [Undaunted Courage] vs [To Kill a Mockingbird]
+treeTitle.add(Book [title=Undaunted Courage, author=Stephen Ambrose, pages=498, status=ONSHELF]) returned: true
+BookTitle.compare() invoked: [For Whom the Bell Tolls] vs [To Kill a Mockingbird]
+BookTitle.compare() invoked: [For Whom the Bell Tolls] vs [For Whom the Bell Tolls]
+treeTitle.add(Book [title=For Whom the Bell Tolls, author=Ernest Hemingway, pages=155, status=ONSHELF]) returned: false
+
+Books ordered by title:
+  Book [title=For Whom the Bell Tolls, author=Ernest Hemingway, pages=155, status=ONSHELF]
+  Book [title=To Kill a Mockingbird, author=Harper Lee, pages=320, status=ONSHELF]
+  Book [title=Undaunted Courage, author=Stephen Ambrose, pages=498, status=ONSHELF]
+
+*********** JOURNAL TREESET -- ORDERED BY EDITOR (JournalEditor Comparator) ***********
+JournalEditor.compare() invoked: [American Association for the Advancement of Science] vs [American Association for the Advancement of Science]
+treeEditor.add(Journal [title=Science, editor=American Association for the Advancement of Science, volume=1, status=ONSHELF]) returned: true
+JournalEditor.compare() invoked: [National Academy of Sciences] vs [American Association for the Advancement of Science]
+treeEditor.add(Journal [title=Proceedings of the National Academy of Sciences, editor=National Academy of Sciences, volume=2, status=ONSHELF]) returned: true
+JournalEditor.compare() invoked: [NowPublishers] vs [American Association for the Advancement of Science]
+JournalEditor.compare() invoked: [NowPublishers] vs [National Academy of Sciences]
+treeEditor.add(Journal [title=Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21, status=ONSHELF]) returned: true
+JournalEditor.compare() invoked: [ACM] vs [National Academy of Sciences]
+JournalEditor.compare() invoked: [ACM] vs [American Association for the Advancement of Science]
+treeEditor.add(Journal [title=ACM Transations on Graphics, editor=ACM, volume=451, status=BORROWED]) returned: true
+JournalEditor.compare() invoked: [ACM] vs [National Academy of Sciences]
+JournalEditor.compare() invoked: [ACM] vs [American Association for the Advancement of Science]
+JournalEditor.compare() invoked: [ACM] vs [ACM]
+treeEditor.add(Journal [title=ACM Transations on Graphics, editor=ACM, volume=78, status=ONSHELF]) returned: false
+JournalEditor.compare() invoked: [IEEE] vs [National Academy of Sciences]
+JournalEditor.compare() invoked: [IEEE] vs [American Association for the Advancement of Science]
+treeEditor.add(Journal [title=IEEE Proceedings, editor=IEEE, volume=21, status=ONSHELF]) returned: true
+JournalEditor.compare() invoked: [NowPublishers] vs [National Academy of Sciences]
+JournalEditor.compare() invoked: [NowPublishers] vs [NowPublishers]
+treeEditor.add(Journal [title=Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21, status=ONSHELF]) returned: false
+
+Journals ordered by editor:
+  Journal [title=ACM Transations on Graphics, editor=ACM, volume=451, status=BORROWED]
+  Journal [title=Science, editor=American Association for the Advancement of Science, volume=1, status=ONSHELF]
+  Journal [title=IEEE Proceedings, editor=IEEE, volume=21, status=ONSHELF]
+  Journal [title=Proceedings of the National Academy of Sciences, editor=National Academy of Sciences, volume=2, status=ONSHELF]
+  Journal [title=Foundations and Trends in Microcomputing, editor=NowPublishers, volume=21, status=ONSHELF]
